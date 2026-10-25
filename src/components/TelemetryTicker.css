@@ -1,0 +1,183 @@
+/* ==========================================================================
+   TELEMETRY TICKER (MUNICIPAL HUD)
+   ========================================================================== */
+
+.telemetry-bar {
+  width: 100%;
+  background: #090d16;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 11.5px;
+  color: #94a3b8;
+  user-select: none;
+  position: relative;
+  z-index: 99;
+}
+
+[data-theme="light"] .telemetry-bar {
+  background: #f1f5f9;
+  border-bottom-color: rgba(0, 0, 0, 0.08);
+  color: #475569;
+}
+
+.telemetry-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 6px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.telemetry-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.telemetry-indicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.telemetry-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  animation: telemetryPulse 2s infinite ease-in-out;
+}
+
+@keyframes telemetryPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.telemetry-label {
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  color: #10b981;
+  font-size: 10.5px;
+}
+
+.telemetry-divider {
+  width: 1px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+[data-theme="light"] .telemetry-divider {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.telemetry-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+}
+
+.telemetry-dim {
+  color: #64748b;
+  font-weight: 600;
+}
+
+.telemetry-val {
+  color: #e2e8f0;
+  font-weight: 700;
+}
+
+[data-theme="light"] .telemetry-val {
+  color: #1e293b;
+}
+
+.telemetry-mono {
+  color: #38bdf8;
+  font-weight: 700;
+}
+
+/* Right buttons */
+.telemetry-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.telemetry-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 10.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.12s ease;
+}
+
+[data-theme="light"] .telemetry-btn {
+  background: #e2e8f0;
+  border-color: #cbd5e1;
+  color: #475569;
+}
+
+.telemetry-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #f8fafc;
+}
+
+.telemetry-btn.is-active {
+  color: #10b981;
+  border-color: rgba(16, 185, 129, 0.35);
+  background: rgba(16, 185, 129, 0.08);
+}
+
+.telemetry-cmd-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(59, 130, 246, 0.12);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  color: #60a5fa;
+  padding: 3px 10px;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+[data-theme="light"] .telemetry-cmd-btn {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+  color: #2563eb;
+}
+
+.telemetry-cmd-btn:hover {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+}
+
+.telemetry-cmd-icon {
+  background: rgba(0, 0, 0, 0.25);
+  padding: 1px 4px;
+  border-radius: 3px;
+  font-size: 9.5px;
+}
+
+@media (max-width: 768px) {
+  .hide-on-mobile {
+    display: none;
+  }
+  .telemetry-inner {
+    padding: 6px 12px;
+  }
+}

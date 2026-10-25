@@ -1,0 +1,133 @@
+.google-auth-container {
+  width: 100%;
+  margin: 12px 0 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Official GIS rendered button container */
+.google-gis-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.google-official-btn-slot {
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  justify-content: center;
+  min-height: 44px;
+}
+
+/* Fallback button when GIS is mounting */
+.google-signin-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 380px;
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: 1px solid var(--civic-border, #cbd5e1);
+  background: var(--civic-surface, #ffffff);
+  color: var(--civic-text, #1e293b);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.google-signin-btn:hover {
+  background: var(--civic-surface-hover, #f8fafc);
+  border-color: #94a3b8;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+.google-signin-btn:active {
+  transform: translateY(0);
+}
+
+.google-signin-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.google-icon {
+  flex-shrink: 0;
+}
+
+.google-btn-text {
+  letter-spacing: -0.2px;
+}
+
+/* Auth Divider */
+.auth-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  margin: 16px 0 18px;
+  color: var(--civic-muted, #94a3b8);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid var(--civic-border, #e2e8f0);
+}
+
+.auth-divider span {
+  padding: 0 12px;
+}
+
+/* Loading Indicator */
+.google-loading-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--civic-primary, #2563eb);
+}
+
+.google-spinner-mini {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(37, 99, 235, 0.25);
+  border-top-color: var(--civic-primary, #2563eb);
+  border-radius: 50%;
+  animation: googleSpin 0.7s linear infinite;
+}
+
+@keyframes googleSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Dark Mode Overrides */
+[data-theme="dark"] .google-signin-btn {
+  background: #111a2e;
+  border-color: #1e2c4a;
+  color: #f8fafc;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .google-signin-btn:hover {
+  background: #192644;
+  border-color: #3b82f6;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+}

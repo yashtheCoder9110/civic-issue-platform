@@ -1,0 +1,30 @@
+{
+  "name": "civicconnect-backend",
+  "version": "1.0.0",
+  "description": "Backend API for the CivicConnect civic issue reporting platform",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "keywords": [
+    "civicconnect",
+    "civic-issues",
+    "express"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.7.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.11.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
